@@ -2,6 +2,7 @@ package com.example.nicholas.reminders;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -37,6 +38,7 @@ public class RemindersActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        /*
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -45,5 +47,18 @@ public class RemindersActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+        */
+
+        switch(item.getItemId()) {
+            case R.id.action_new:
+                Log.d(getLocalClassName(), "create new Reminder");
+                return true;
+            case R.id.action_exit:
+                Log.d(getLocalClassName(), "exit");
+                finish();
+                return true;
+            default:
+                return false;
+        }
     }
 }
